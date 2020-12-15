@@ -1,1 +1,1 @@
-### Full Stack OpeN
+### Full Stack Open
