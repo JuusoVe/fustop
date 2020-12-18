@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Filter from './components/Filter'
 import Info from './components/Info'
-
 import axios from 'axios'
-import Country from './components/Country'
 
 const App = () => {
   const [ countries, setCountries ] = useState([]) 
