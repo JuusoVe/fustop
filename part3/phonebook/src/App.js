@@ -30,7 +30,8 @@ const App = () => {
           giveUserMessage('suc','phone number updated')
         })
         .catch(error => {
-          giveUserMessage('err', `failed to update ${perObject.name} error: ${error}`)
+          giveUserMessage('err', `error: ${JSON.stringify(error.response.data)}`)
+          console.log(JSON.stringify(error.response.data))
         })
       }
     } else {    
@@ -42,18 +43,20 @@ const App = () => {
         .create(personObject)
         .then(returnedPerson =>  {
           setPersons(persons.concat(returnedPerson))
+        }).catch(error => {
+          giveUserMessage('err', `error: ${JSON.stringify(error.response.data)}`)
+          console.log(JSON.stringify(error.response.data))  
         })
         giveUserMessage('suc', 'new contact added')  
     }
   }
 
 const giveUserMessage = (type, content) => {
-  console.log(`in giveUserMessage, logging type: ${type}`)
   setMsgType(type)
   setUserMessage(content)
   setTimeout(() => {
     setUserMessage(null)
-  }, 3000)
+  }, 5000)
 
 } 
 

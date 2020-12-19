@@ -1,7 +1,5 @@
 const UserMsg = ( {message, type} ) => {
 
-    console.log(`logging UserMsg props type: ${type}` )
-
     const sucStyle = {
         color: 'green'
     }
